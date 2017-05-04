@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for doubanmoive project
+# Scrapy settings for doubanmovie project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,10 +9,10 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'doubanmoive'
+BOT_NAME = 'doubanmovie'
 
-SPIDER_MODULES = ['doubanmoive.spiders']
-NEWSPIDER_MODULE = 'doubanmoive.spiders'
+SPIDER_MODULES = ['doubanmovie.spiders']
+NEWSPIDER_MODULE = 'doubanmovie.spiders'
 
 MONGODB_SERVER = 'localhost'
 MONGODB_PORT = 27017
@@ -38,7 +38,7 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = True
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -52,13 +52,13 @@ COOKIES_ENABLED = True
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'doubanmoive.middlewares.DoubanmoiveSpiderMiddleware': 543,
+#    'doubanmovie.middlewares.doubanmovieSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'doubanmoive.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'doubanmovie.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -70,7 +70,7 @@ COOKIES_ENABLED = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'doubanmoive.pipelines.DoubanmoivePipeline': 300,
+    'doubanmovie.pipelines.DoubanmoviePipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

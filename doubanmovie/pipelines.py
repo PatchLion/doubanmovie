@@ -6,7 +6,7 @@ from scrapy.exceptions import DropItem
 from scrapy.conf import settings
 from scrapy import log
 
-class DoubanmoivePipeline(object):
+class DoubanmoviePipeline(object):
     #Connect to the MongoDB database
     def __init__(self):
         connection = pymongo.MongoClient(settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
@@ -14,6 +14,7 @@ class DoubanmoivePipeline(object):
         self.collection = db[settings['MONGODB_COLLECTION']]
 
     def process_item(self, item, spider):
+        print("item->", item)
         #Remove invalid data
         valid = True
         for data in item:
@@ -21,7 +22,6 @@ class DoubanmoivePipeline(object):
             valid = False
             raise DropItem("Missing %s of blogpost from %s" %(data, item['url']))
         if valid:
-        #Insert data into database
             new_moive=[{
                 "name":item['name'],
                 "year":item['year'],

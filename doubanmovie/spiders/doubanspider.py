@@ -3,7 +3,7 @@
 from scrapy.selector import Selector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
-from doubanmoive.items import DoubanmoiveItem
+from doubanmovie.items import DoubanmoiveItem
 
 class DoubanspiderSpider(CrawlSpider):
     name = "doubanspider"
@@ -12,10 +12,11 @@ class DoubanspiderSpider(CrawlSpider):
 
     rules = [
         Rule(SgmlLinkExtractor(allow=r'http://movie.douban.com/top250\?start=\d+.*')),
-        Rule(SgmlLinkExtractor(allow=r'http://movie.douban.com/subject/\d+'), callback="parse")
+        Rule(SgmlLinkExtractor(allow=r'http://movie.douban.com/subject/\d+'), callback="parse_item")
     ]
 
-    def parse(self, response):
+    def parse_item(self, response):
+        print('url->',str(response.url))
         sel=Selector(response)
         item=DoubanmoiveItem()
         item['name']=sel.xpath('//*[@id="content"]/h1/span[1]/text()').extract()
