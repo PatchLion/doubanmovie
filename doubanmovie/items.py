@@ -15,3 +15,4 @@ class DoubanmoiveItem(Item):
     director = Field() #导演
     classification = Field() #分类
     actor = Field() #演员
+    imageurl = Field() #图片url

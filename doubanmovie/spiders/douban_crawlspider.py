@@ -5,8 +5,8 @@ from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from doubanmovie.items import DoubanmoiveItem
 
-class DoubanspiderSpider(CrawlSpider):
-    name = "doubanspider"
+class DoubanCrawlSpider(CrawlSpider):
+    name = "doubancrawlspider"
     allowed_domains = ["movie.douban.com"]
     start_urls = ['http://movie.douban.com/top250']
 
